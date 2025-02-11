@@ -23,5 +23,23 @@ public class Main {
         soma = numero1 + numero2;
         System.out.println("o valor da soma é: " + soma);
 
+
+        //declarando variaveis
+
+        //declarando Nome
+        System.out.println("Insira seu Nome");
+        String nome = sc.next();
+
+        //declarando Idade
+        System.out.println("Insira sua idade");
+        int idade = sc.nextInt();
+
+        //declarando Endereco
+        System.out.println("Insira seu Endereco");
+        String endereco = sc.next();
+
+        System.out.println("Olá " + nome + '!');
+        System.out.println("endereço: " + endereco);
+        System.out.println("idade: " + idade);
     }
 }
