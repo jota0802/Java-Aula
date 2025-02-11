@@ -28,7 +28,7 @@ public class Main {
 
         //declarando Nome
         System.out.println("Insira seu Nome");
-        String nome = sc.next();
+        String nome = sc.nextLine();
 
         //declarando Idade
         System.out.println("Insira sua idade");
@@ -41,5 +41,7 @@ public class Main {
         System.out.println("Olá " + nome + '!');
         System.out.println("endereço: " + endereco);
         System.out.println("idade: " + idade);
+
+        //porque o nextLine nao funciona no ultimo? pq se n tem nenhum comando depois nao funciona, ou porque tem string e int juntos
     }
 }
