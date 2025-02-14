@@ -29,7 +29,7 @@ import java.util.Scanner;
 
                 System.out.println("A media dos salários de:"+funcionario1+", "+funcionario2+"e "+funcionario3+" foi de: "+mediaSalario);
 
-
+                System.out.println("Obrigado por usar o programa!");
             }
 
         }
