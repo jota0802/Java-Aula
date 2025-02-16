@@ -1,6 +1,9 @@
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+
 
 public class usandoFor{
     public static void main(String[] args) {
@@ -8,7 +11,10 @@ public class usandoFor{
         Scanner scannerNumber = new Scanner (System.in);
         Scanner scannerString = new Scanner (System.in);
         
+        List<Double> listaSomaSalarios = new ArrayList<>();
 
+        double somaSalarios = 0.0;
+        
         //ex1
 
         //dicionario usando map
@@ -29,6 +35,7 @@ public class usandoFor{
             //Salario
             System.out.println("Insira o Salario do Funcionario "+i+":");
             double salarioFuncionario = scannerNumber.nextDouble();
+            listaSomaSalarios.add(salarioFuncionario);
 
             //Adicionando Funcionarios e Salarios ao Map
             salarioPorNome.put(NomeFuncionario, salarioFuncionario);
@@ -36,6 +43,10 @@ public class usandoFor{
         for (Map.Entry<String, Double> entrada : salarioPorNome.entrySet()){
             System.out.println("O Funcionario " + entrada.getKey() + " recebe: " +entrada.getValue() + " R$" );
         }
+        for (double numeroLista : listaSomaSalarios){
+            somaSalarios += numeroLista;
+        }
+        System.out.println("A soma dos salarios dos funcionarios é de: "+somaSalarios);
 
     }   
 }

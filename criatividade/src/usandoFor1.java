@@ -1,8 +1,6 @@
-import java.util.Scanner;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 
         public class usandoFor1{
@@ -21,7 +19,7 @@ import java.util.ArrayList;
                 double soma = 0;
 
                 //pedindo a quantidade de numeros para se somar
-                System.out.println("Insira quantos numeros a adicionar na lista")
+                System.out.println("Insira quantos numeros a adicionar na lista");
                 double numeroContagem = scannerNumber.nextDouble();
 
                 //criando condicional da quantidade
@@ -37,6 +35,6 @@ import java.util.ArrayList;
                     soma+=numero;
                 }
 
-                System.out.println("A soma dos numeros é: "+ soma)
+                System.out.println("A soma dos numeros é: "+ soma);
             }
         }
