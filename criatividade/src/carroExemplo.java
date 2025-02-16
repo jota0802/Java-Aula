@@ -45,7 +45,7 @@ public class carroExemplo{
             System.out.println("Insira o ano do carro");
             int ano = scannerNumber.nextInt();
 
-            //criando objeto    
+            //criando objeto        
             Carro carro = new Carro(modelo,ano);
 
             //adicionando o carro a lista
