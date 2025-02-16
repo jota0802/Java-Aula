@@ -1,5 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
-
 
 class ContaBancaria{
     private String titular;
@@ -48,6 +49,8 @@ public class bancoJota{
         Scanner scannerNumber = new Scanner(System.in);
         Scanner scannerString = new Scanner(System.in);
 
+        //criando lista de transacoes
+        List<String> listaTransacoes = new ArrayList<>();
 
         //criando titular da conta
         System.out.println("Insira o nome do Titular da Conta:");
@@ -62,28 +65,45 @@ public class bancoJota{
 
         //fazendo menuzinho
         int menuzinho;
+        //o do e utilizado para printar o valor uma vez antes de iniciar o looping
         do { 
             System.out.println("\nMenu:");
             System.out.println("0 - Depositar");
             System.out.println("1 - Sacar");
             System.out.println("2 - Ver Saldo");
-            System.out.println("3 - Sair");
+            System.out.println("3 - Transacoes");
+            System.out.println("4 - Sair");
             System.out.print("Escolha uma opção: ");
             menuzinho = scannerNumber.nextInt();
-            
+        
+        //switch = if else, usado para dar mais organizacao e mais clareza ao codigo
         switch (menuzinho) {
             //depositanto na conta
             case 0:
-                System.out.println("Qual valor deseja depositar?");
-                double deposito = scannerNumber.nextDouble();
-                conta.depositar(deposito);
-                break;
+                if (listaTransacoes.size() < 3){
+                    System.out.println("Qual valor deseja depositar?");
+                    double deposito = scannerNumber.nextDouble();
+                    conta.depositar(deposito);
+                    listaTransacoes.add("Um deposito foi feito no valor de: "+deposito+" Reais");
+                    break;
+                }else{
+                    System.out.println("");
+                    System.out.println("voce ja passou do limite de transacoes diarias");
+                    break;
+                }
             //sacando na conta
             case 1:
-                System.out.println("Qual valor deseja sacar?");
-                double saque = scannerNumber.nextDouble();
-                conta.sacar(saque);
-                break;
+                if (listaTransacoes.size() < 3){
+                    System.out.println("Qual valor deseja sacar?");
+                    double saque = scannerNumber.nextDouble();
+                    conta.sacar(saque);
+                    listaTransacoes.add("Um saque no valor de: "+saque+" Reais");
+                    break;
+                }else{
+                    System.err.println("");
+                    System.out.println("voce ja passo do limite de transacoes diarias");
+                    break;
+                }
             //saldo da conta
             case 2:
                 conta.exibirSaldo();
@@ -91,8 +111,14 @@ public class bancoJota{
                 break;
             //saindo da conta
             case 3:
+                for(String transacoes : listaTransacoes){
+                    System.out.println(transacoes);
+
+                }
+                break;
+            case 4:
                 System.out.println("Encerrando o programa");
         } 
-        }while(menuzinho != 3);
+        }while(menuzinho != 4);
     }
 }
